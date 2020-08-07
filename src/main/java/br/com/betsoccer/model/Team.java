@@ -16,7 +16,7 @@ public class Team implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
+	@Column(name = "ID_TEAM")
 	private Long id;
 
 	@Column(name = "NAME")
@@ -26,7 +26,7 @@ public class Team implements Serializable {
 	private String ufTeam;
 
 	@Column(name = "NAME_LOGO_TEAM")
-	private String nameLogoTean;
+	private String nameLogoTeam;
 
 	@Column(name = "COUNTRY_TEAM")
 	private String countryTeam;

@@ -10,15 +10,15 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "match")
+@Table(name = "game")
 @EntityListeners(AuditingEntityListener.class)
-public class Match implements Serializable {
+public class Game implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID_MATCH")
+	@Column(name = "ID_GAME")
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -36,14 +36,19 @@ public class Match implements Serializable {
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Team teamVisitor;
 
+	@Column(name = "ROUND")
+	private Integer round;
+
 	@Column(name = "GOALS_HOME")
 	private Integer goalsHome;
 
 	@Column(name = "GOALS_VISITOR")
 	private Integer goalsVisitor;
 
-	@Column(name = "MATCH_DATE")
+	@Column(name = "GAME_DATE")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date matchDate;
+	private Date gameDate;
+
+
 
 }

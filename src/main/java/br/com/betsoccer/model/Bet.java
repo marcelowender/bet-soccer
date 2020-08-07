@@ -22,9 +22,9 @@ public class Bet implements Serializable {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ID_MATCH", nullable = false)
+    @JoinColumn(name = "ID_GAME", nullable = false)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private Match match;
+    private Game game;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_USER", nullable = false)
